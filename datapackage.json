@@ -4,7 +4,7 @@
         {
             "path": "data_normalized.csv",
             "profile": "tabular-data-resource",
-            "name": "data_norm",
+            "name": "data_normalized",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
@@ -67,53 +67,4 @@
             }
         }
     ]
-}
-  "name": "uk-bond-yields",
-  "title": "10-Year UK Government Bond Yields",
-  "description": "10-Year Nominal Par Yields (Quarterly Data) from the Bank of England.",
-  "resources": [
-    {
-      "path": "bond_yields.csv",
-      "name": "bond_yields",
-      "format": "csv"
-    }
-  ],
-  "views": [
-    {
-      "name": "yields-over-time",
-      "title": "10-Year Bond Yields Over Time",
-      "specType": "vega-lite",
-      "spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-        "data": {
-          "url": "bond_yields.csv"
-        },
-        "mark": "line",
-        "encoding": {
-          "x": {"field": "Date", "type": "temporal", "title": "Date"},
-          "y": {"field": "Rate", "type": "quantitative", "title": "Yield (%)"}
-        },
-        "width": 800,
-        "height": 400
-      }
-    },
-    {
-      "name": "yields-distribution",
-      "title": "Distribution of 10-Year Bond Yields",
-      "specType": "vega-lite",
-      "spec": {
-        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-        "data": {
-          "url": "bond_yields.csv"
-        },
-        "mark": "bar",
-        "encoding": {
-          "x": {"field": "Rate", "type": "quantitative", "title": "Yield (%)"},
-          "y": {"aggregate": "count", "type": "quantitative", "title": "Frequency"}
-        },
-        "width": 800,
-        "height": 400
-      }
-    }
-  ]
 }
