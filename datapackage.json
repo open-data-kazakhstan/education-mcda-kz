@@ -2,7 +2,7 @@
     "profile": "tabular-data-package",
     "resources": [
         {
-            "path": "data_norm.csv",
+            "path": "data_normalized.csv",
             "profile": "tabular-data-resource",
             "name": "data_norm",
             "format": "csv",
