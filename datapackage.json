@@ -1,63 +1,50 @@
-import os
-import json
-import pandas as pd
-
-# Путь к данным
-data_file_path = "data/data_norm.csv"
-datapackage_path = "datapackage.json"
-
-# Настройка базового datapackage.json
-datapackage = {
-    "name": "education-kz",
-    "title": "Education in Kazakhstan",
-    "description": "Dataset with educational and socio-economic indicators across Kazakhstan regions.",
-    "resources": []
+{
+  "name": "uk-bond-yields",
+  "title": "10-Year UK Government Bond Yields",
+  "description": "10-Year Nominal Par Yields (Quarterly Data) from the Bank of England.",
+  "resources": [
+    {
+      "path": "bond_yields.csv",
+      "name": "bond_yields",
+      "format": "csv"
+    }
+  ],
+  "views": [
+    {
+      "name": "yields-over-time",
+      "title": "10-Year Bond Yields Over Time",
+      "specType": "vega-lite",
+      "spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "url": "bond_yields.csv"
+        },
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Date", "type": "temporal", "title": "Date"},
+          "y": {"field": "Rate", "type": "quantitative", "title": "Yield (%)"}
+        },
+        "width": 800,
+        "height": 400
+      }
+    },
+    {
+      "name": "yields-distribution",
+      "title": "Distribution of 10-Year Bond Yields",
+      "specType": "vega-lite",
+      "spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "url": "bond_yields.csv"
+        },
+        "mark": "bar",
+        "encoding": {
+          "x": {"field": "Rate", "type": "quantitative", "title": "Yield (%)"},
+          "y": {"aggregate": "count", "type": "quantitative", "title": "Frequency"}
+        },
+        "width": 800,
+        "height": 400
+      }
+    }
+  ]
 }
-
-# Проверка, существует ли файл с данными
-if not os.path.exists(data_file_path):
-    raise FileNotFoundError(f"Файл {data_file_path} не найден. Проверьте путь к данным.")
-
-# Считывание данных для получения структуры
-try:
-    df = pd.read_csv(data_file_path, sep=';', encoding='utf-8')
-except Exception as e:
-    raise ValueError(f"Ошибка при чтении файла: {e}")
-
-# Генерация схемы данных
-schema = {
-    "fields": []
-}
-
-for column in df.columns:
-    # Определение типа данных
-    dtype = str(df[column].dtype)
-    if dtype.startswith('int') or dtype.startswith('float'):
-        field_type = "number"
-    elif dtype == "object":
-        field_type = "string"
-    else:
-        field_type = "string"  # По умолчанию
-
-    # Добавление поля в схему
-    schema["fields"].append({
-        "name": column,
-        "type": field_type
-    })
-
-# Добавление описания ресурса
-resource = {
-    "name": "data_norm",
-    "path": data_file_path,
-    "format": "csv",
-    "encoding": "utf-8",
-    "schema": schema
-}
-
-datapackage["resources"].append(resource)
-
-# Сохранение datapackage.json
-with open(datapackage_path, "w", encoding="utf-8") as f:
-    json.dump(datapackage, f, ensure_ascii=False, indent=4)
-
-print(f"Файл {datapackage_path} успешно создан.")
