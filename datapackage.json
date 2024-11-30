@@ -17,7 +17,7 @@
       "spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "data": {
-          "url": "bond_yields.csv"
+          "url": "data/data_normalizied.csv"
         },
         "mark": "line",
         "encoding": {
