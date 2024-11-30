@@ -1,5 +1,7 @@
 # Education in Kazakhstan
+<PlotlyBarChart data={{ url: 'data/data.csv' }} xAxis="Регионы" yAxis="Рейтинг" />
 
+<FlatUiTable data={{ url: 'data/data.csv' }} />
 ## Description
 This dataset provides various educational and socio-economic indicators across the regions of Kazakhstan. The main data is stored in `data/data_norm.csv`, with columns covering metrics such as:
 
