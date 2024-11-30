@@ -1,4 +1,74 @@
+@@ -1,70 +1,50 @@
 {
+    "profile": "tabular-data-package",
+    "resources": [
+        {
+            "path": "data_norm.csv",
+            "profile": "tabular-data-resource",
+            "name": "data_norm",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "Region/City",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Number of Students",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Internal Expenditures on R&D",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "External Expenditures on R&D",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Current Revenues",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Current Expenditures",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Institutions",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Teachers",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Student Seat Availability",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "Innovation Activity Level, %",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        }
+    ]
+}
   "name": "uk-bond-yields",
   "title": "10-Year UK Government Bond Yields",
   "description": "10-Year Nominal Par Yields (Quarterly Data) from the Bank of England.",
@@ -17,7 +87,7 @@
       "spec": {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "data": {
-          "url": "data/data_normalizied.csv"
+          "url": "bond_yields.csv"
         },
         "mark": "line",
         "encoding": {
