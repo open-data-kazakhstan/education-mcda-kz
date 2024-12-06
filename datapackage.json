@@ -4,7 +4,7 @@
         {
             "path": "data.csv",
             "profile": "tabular-data-resource",
-            "name": "datф",
+            "name": "data",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
