@@ -1,8 +1,11 @@
 # Education in Kazakhstan
+
 <PlotlyBarChart data={{ url: 'data/data.csv' }} xAxis="Region/City" yAxis="Number of Students" />
 
 <FlatUiTable data={{ url: 'data/data.csv' }} />
+
 ## Description
+
 This dataset provides various educational and socio-economic indicators across the regions of Kazakhstan. The main data is stored in `data/data_norm.csv`, with columns covering metrics such as:
 
 - **Internal and External R&D Expenses**: This column includes expenses related to research and development within and outside each region.
@@ -13,6 +16,12 @@ This dataset provides various educational and socio-economic indicators across t
 - **General Education Teachers**: Contains teacher counts in general education schools.
 
 Some data in the dataset has been manually adjusted due to the recent reorganization of regions in Kazakhstan. These adjustments include proportional estimations or synthetic data additions to maintain dataset consistency.
+
+#### Data Story
+
+The data on the number of students and research expenditures across different regions of Kazakhstan reveal significant disparities in the levels of education and scientific activity. For instance, cities like Almaty and Shymkent, with the highest student populations, also have substantial research funding and higher levels of innovation activity. In contrast, regions like Mangystau, despite having fewer students, allocate significant resources to research and development, indicating a focus on innovation.
+
+The level of innovation activity ranges from 4.7% in West Kazakhstan to 15.2% in North Kazakhstan, reflecting varying degrees of regional involvement in innovative processes. These differences highlight how resource distribution and focus on research can impact the accessibility and quality of education, as well as the development of scientific infrastructure across the country.
 
 ## Installation
 
