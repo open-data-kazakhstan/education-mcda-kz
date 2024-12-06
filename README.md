@@ -1,5 +1,5 @@
 # Education in Kazakhstan
-<PlotlyBarChart data={{ url: 'data/data.csv' }} xAxis="Регионы" yAxis="Рейтинг" />
+<PlotlyBarChart data={{ url: 'data/data.csv' }} xAxis="Region/City" yAxis="Number of Students" />
 
 <FlatUiTable data={{ url: 'data/data.csv' }} />
 ## Description
