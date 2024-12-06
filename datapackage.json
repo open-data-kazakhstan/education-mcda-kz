@@ -2,9 +2,9 @@
     "profile": "tabular-data-package",
     "resources": [
         {
-            "path": "data_normalized.csv",
+            "path": "data.csv",
             "profile": "tabular-data-resource",
-            "name": "data_normalized",
+            "name": "datф",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
