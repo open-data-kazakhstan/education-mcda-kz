@@ -2,8 +2,8 @@
 
 ## Original data
 
-<PlotlyBarChart data={{ url: 'data/data_for_diagr.csv' }} xAxis="Region/City" yAxis="Number of Students" />
-<FlatUiTable data={{ url: 'data/data_for_diagr.csv' }} />
+<PlotlyBarChart data={{ url: 'data/data_fd.csv' }} xAxis="Region/City" yAxis="Number of Students" />
+<FlatUiTable data={{ url: 'data/data_fd.csv' }} />
 
 
 ## Data Story
